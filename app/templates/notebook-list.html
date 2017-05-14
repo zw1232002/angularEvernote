@@ -1,0 +1,26 @@
+<div class="noteBook-list  bg-faded">
+    <div class="col-lg-12 ">
+        <br/>
+        <div class="clearfix">
+            <p class="h4 text-muted float-left">笔记本</p>
+            <a href="#!/notebook/add" class="float-right new-note-book">新建笔记本</a>
+        </div>
+        <br/>
+    </div>
+    <div class="noteBook-wrap" id="noteBook-wrap">
+        <div ng-class="noteBook.id==noteBookId ? 'selected' : '' " ng-click="selectNoteBook(noteBook)"
+             ng-repeat="noteBook in notebookListArray | orderBy:'-createTime' track by noteBook.id"
+             class="card border-left-0 border-right-0 border-bottom-0 rounded-0">
+            <div class="card-block clearfix">
+                <div class="float-left">
+                    <h6 class="card-title">{{noteBook.title}}</h6>
+                    <p class="card-subtitle mb-2 text-muted ">{{noteBook.noteCount}}</p>
+                </div>
+                <div class="button-wrap float-right  mt-lg-2">
+                    <button class=" delete-btn" type="button" ng-click="deleteNoteBook(noteBook.id)"></button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

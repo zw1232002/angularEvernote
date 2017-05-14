@@ -1,0 +1,16 @@
+<div class="modal-header">
+    <h5 class="modal-title" id="newNoteBookModalLabel">新增笔记本</h5>
+</div>
+<div class="modal-body">
+    <form>
+        <div class="form-group">
+            <label for="new-note-book-title" class="form-control-label">笔记本名字:</label>
+            <input type="text" class="form-control" id="new-note-book-title" ng-model="newNoteBookTitle"
+                   ng-required="true" required>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" ng-click="goBack()">取消</button>
+    <button type="submit" class="btn btn-success" ng-click="addNotebook()">保存</button>
+</div>

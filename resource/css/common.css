@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+body{color: #383838;overflow: hidden;}
+/*左侧导航*/
+.sidebar {position: fixed;top: 0;bottom: 0;left: 0;z-index: 1000;overflow: hidden;border-right: 1px solid #eee;  }
+.sidebar .insert-note:hover {}
+.sidebar .all-note{}
+
+.content-wrap{width: 100%;padding-left: 88px;}
+
+/*笔记列表*/
+.content-wrap .card{cursor: pointer;}
+.content-wrap .card:hover{background: #dedede;}
+.content-wrap .card.selected{background: #efefef;}
+
+.content-wrap .note-list{padding-right:0;padding-left:0;border-right: 1px solid rgba(0,0,0,.125);}
+.content-wrap .note-wrap {height:700px;overflow-y: scroll;}
+
+/*删除按钮*/
+.body-wrap .delete-btn{display:block;width:24px;height:24px;border:none;cursor:pointer;background: url("../images/trash.png") -0px -0px  no-repeat;background-size: 24px 24px;}
+.body-wrap .delete-btn:hover{background-image: url("../images/trash-green.png");}
+
+/*笔记编辑内容*/
+.content-wrap .note-content .detail-wrap{height:700px;overflow-y: scroll;}
+.content-wrap .note-content .detail-wrap .note-title{font-size: 1.4rem;}
+.content-wrap .note-content .detail-wrap input,.content-wrap .note-content .detail-wrap textarea{border: none;}
+.content-wrap .note-content .detail-wrap .note-content-wrap,.content-wrap .note-content .detail-wrap textarea{position: relative;width: 100%;height: 100%;}
+.content-wrap .note-content .detail-wrap textarea{resize: none;}
+.content-wrap .detail-wrap .note-title{}
+
+/*笔记本*/
+.body-wrap .noteBook-list { }
+.body-wrap .noteBook-list .new-note-book{width:50px;height:50px;margin-top:-10px;text-indent:-99999rem;border:none;background: url("../images/plus.png") left top no-repeat;background-size: 50px 50px;outline: none;cursor: pointer;}
+.body-wrap .noteBook-list .card{background: none;}
+.body-wrap .noteBook-list .card:hover{background: #f1f1f1;}
+.body-wrap .noteBook-list .card.selected{background: #f3f3f3;}
+.body-wrap .noteBook-wrap{position: absolute;width: 100%;height:400px;overflow-y: scroll;background: #fff;}
+
+.body-wrap .noteBook-wrap .button-wrap{margin-right: 4.25rem;}

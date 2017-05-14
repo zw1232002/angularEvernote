@@ -1,0 +1,30 @@
+<div class="modal-header">
+    <h5 class="modal-title" id="newNoteModalLabel">新增笔记</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <form>
+        <div class="form-group">
+            <label for="new-note-book-id" class="form-control-label">所属笔记本:</label>
+            <select class="form-control" id="new-note-book-id"
+                    ng-options="item.title for item in notebookListArray track by item.id " ng-model="newNoteBeBook">
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="new-note-title" class="form-control-label">笔记标题:</label>
+            <input type="text" class="form-control" id="new-note-title" ng-model="noteTitle" ng-required="true"
+                   required>
+        </div>
+        <div class="form-group">
+            <label for="new-note-content" class="form-control-label">笔记内容:</label>
+            <textarea class="form-control" name="newNoteContent" id="new-note-content" ng-model="noteContent" rows="6"
+                      ng-required="true" required></textarea>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal" ng-click="goBack();">取消</button>
+    <button type="submit" class="btn btn-success" ng-click="addNewNote()">保存</button>
+</div>

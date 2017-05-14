@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="note-list col-4 ">
+        <div class="col-lg-12">
+            <div>
+                <select class="form-control col-7" ng-change="filterNotebookFunc()"  ng-options="item.title for item in notebookListArray track by item.id" ng-model="filterNotebook">
+                </select>
+            </div>
+            <br/>
+            <p class="h4 text-muted">{{pageTitle}}</p>
+            <br/>
+        </div>
+        <div class="note-wrap" id="note-wrap">
+            <div ng-class=" note.id==currentNoteId ? 'selected' : '' " class="card border-left-0 border-right-0 border-bottom-0 rounded-0 " ng-repeat="note in noteListArray | orderBy:'-createTime' track by note.id  " ng-click="editNote(note)">
+                <div class="card-block">
+                    <h6 class="card-title ">{{note.title}}</h6>
+                    <p class="card-subtitle mb-2 text-muted ">{{note.createTime | timeSpacing}}</p>
+                    <p class="card-text text-muted">{{note.content | substring:25}}</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="note-content col-8">
+        <form method="post" class="content-form ">
+            <div class="clearfix">
+                <br/>
+                <div class="button-wrap col-1 float-left  mt-lg-1">
+                    <button class=" delete-btn" type="button" ng-click="deleteNote()"></button>
+                </div>
+                <div class="col-6 form-group row  float-left">
+                    <label class="col-5  col-form-label" for="noteBookSelect">所属笔记本：</label>
+                    <select class="form-control col-7" ng-change="doSubmit()" id="noteBookSelect" ng-options="item.title for item in notebookListArray track by item.id" ng-model="currentSelectNoteBook">
+                    </select>
+                </div>
+            </div>
+            <hr/>
+            <div class="detail-wrap" id="detail-wrap">
+                <input type="hidden" ng-model="currentNoteId">
+                <div class="form-group mt-2 mb-2">
+                    <input ng-model="noteTitle" placeholder="请输入标题" class="text-success"/>
+                </div>
+                <div class="form-group note-content-wrap">
+                    <textarea placeholder="请输入内容" class="form-control" ng-change="doSubmit()" ng-model="noteContent" ng-required="required"></textarea>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
