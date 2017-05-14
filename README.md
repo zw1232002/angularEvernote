@@ -5,7 +5,6 @@
 如果希望详细了解项目过程和架构，请访问 http://edu.51cto.com/course/course_id-9132.html
 
 <br/>
-<br/>
 课程目录结构如下：
 
 
