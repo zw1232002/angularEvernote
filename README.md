@@ -1,4 +1,4 @@
-# angularEvernote
+# AngularEvernote
 
 使用AngularJs＋Service＋Ngroute＋Bootstrap实现的简易版的印象笔记
 
